@@ -1,0 +1,51 @@
+create database `wssc-swat`default charset utf8;
+
+create table `employee_details` (
+`id` int not null auto_increment,
+`employee_no` varchar(50) not null unique,
+`name` varchar(50) not null,
+`father_name` varchar(50) not null,
+`cnic` varchar(20) not null unique,
+`email` varchar(50) not null unique,
+`address_line` varchar(100) not null,
+`mobile_number` varchar(17) not null unique,
+`date_of_birth` date not null,
+`religion` varchar(50) not null,
+`gender` tinyint not null default 1,
+`blood_group` varchar(20) not null,
+`domicile` varchar(30) not null,
+`marital_status`tinyint not null default 1,
+`next_of_kin` varchar(50) not null,
+`status` varchar(10) not null,
+`next_of_kin_cell_number`varchar(17) not null unique,
+`contact_person`, varchar(50) not null,
+`contact_person_cell_number` varchar(17) not null unique,
+`joining_date` date not null,
+`job_title` varchar(50) not null,
+`employement_type`varchar(20) not null,
+`grade` varchar(50) not null,
+`department` varchar(50) not null,
+`duty_location` varchar(50) not null,
+`contract_exp_date` date not null,
+`duty_point` varchar(50) not null,
+`field_attendance`intyint not null default 1,
+`employment_quota` varchar(20) not null,
+`repartriate_date` date not null,
+`employee_manager`varchar (50) not null,
+PRIMARY KEY(`id`)
+)engine=INNODB;
+
+
+INSERT INTO `employee_details` 
+(`employee_no`, `name`, `father_name`, `cnic`, `email`, `address_line`, `mobile_number`, 
+`date_of_birth`, `religion`, `gender`, `blood_group`, `domicile`, `marital_status`, `next_of_kin`, 
+`status`, `next_of_kin_cell_number`, `contact_person`, `contact_person_cell_number`, `joining_date`, 
+`job_title`, `employement_type`, `grade`, `department`, `duty_location`, `contract_exp_date`, `duty_point`, 
+`field_attendance`, `employment_quota`, `repartriate_date`, `employee_manager`) 
+VALUES 
+('E001', 'John Doe', 'Mr. Doe', '1234567890123', 'johndoe@example.com', '123 Main Street', '+1234567890', 
+'2000-01-01', 'Christian', 1, 'A+', 'Karachi', 1, 'Jane Doe', 'Active', '+1234567891', 'Jane Doe', 
+'+1234567892', '2021-01-01', 'Software Engineer', 'Full Time', 'Grade A', 'IT', 'Karachi', 
+'2022-12-31', 'Karachi', 1, 'Open', '2023-01-01', 'Manager A');
+
+SELECT `name`, `email`, `job_title`, `department` FROM `employee_details`;
