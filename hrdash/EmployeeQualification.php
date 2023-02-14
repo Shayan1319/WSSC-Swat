@@ -58,7 +58,6 @@
                  <div class="col-md-4 mt-4">
                   <div class="form-group">
                      <div class="custom-file">
-
                       <input type="file" class="custom-file-input" id="s1">
                         <label class="custom-file-label" for="customFile">CV Attachment(Optional) </label>
                          <span id="n1" class="text-danger"></span>
