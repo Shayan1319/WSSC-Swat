@@ -8,7 +8,7 @@
 <div id="main">
 <?php include('link/desigene/navbar.php')?>
 <div class="container-fluid m-auto p-5">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-sm-12 col-lg-3 col-md-3 m-4 bg-light p-3">
                     <div class="row">
                         <div class="col-4">
@@ -188,7 +188,7 @@
                 </div>
             </div>
         </div>
-    
+     -->
 </div>
 
 
