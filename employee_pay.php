@@ -61,6 +61,12 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000;
   }
+
+  button {
+    background-color: darkblue !important;
+    color: white !important;
+  
+  }
 </style>
 
 <body>
@@ -81,26 +87,26 @@
               <!-- form start -->
               <form method="post" enctype="multipart/form-data">
                 <div class="row mt-2">
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <div class="form-group">
                       <label>Employee No</label>
                       <input type="text" class="form-control" id="employee_no" name="employee_no">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <div class="form-group">
                       <label>type</label>
                       <input type="text" class="form-control" id="type" name="type">
                     </div>
                   </div>
-                 
-                  <div class="col-md-4">
+
+                  <div class="col-md-2">
                     <div class="form-group">
                       <label>Father Name</label>
                       <input type="text" class="form-control" id="father_name" name="father_name">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <div class="form-group">
                       <label>Job Title</label>
                       <input type="text" class="form-control" id="job_title" name="job_title">
@@ -118,7 +124,6 @@
                       <input type="text" class="form-control" id="gross_pay" name="gross_pay">
                     </div>
                   </div>
-                  
                   <div class="col-md-2">
                     <div class="form-group">
                       <label>Deduction</label>
@@ -131,38 +136,208 @@
                       <input type="text" class="form-control" id="net_pay" name="net_pay">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="clearfix">&nbsp;</div>
+                  <!-- start -->
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Earning</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Deduction</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Fund</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                    <div class="col-md-2">
                     <div class="form-group">
-                      <div class="clearfix">&nbsp;</div>
-                      <button type="button" class="btn btn-primary">search</button>
+                      <label>Discription</label>
+                      <input type="text" class="form-control" id="discription" name="discription">
                     </div>
                   </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Allowance Calc. Mode</label>
+                      <select name="allowance_calc_mode" id="allowance_calc_mode" class="form-control">
+                        <option value="">RUNTIME VALUE</option>
+                        <option value="">PRESENT RATE</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Earning/Deduction/Fund</label>
+                      <select name="earning_deduction_fund" id="earning_deduction_fund" class="form-control">
+                        <option value="">Earning</option>
+                        <option value="">Deduction</option>
+                        <option value="">Fund</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label>Rate</label>
+                      <input type="text" class="form-control" id="rate" name="rate">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <div class="clearfix">&nbsp;</div>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="clearfix">&nbsp;</div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
+                    <table id="employee_pay" class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>S.No</th>
+                          <th>Discription</th>
+                          <th>Allowance Calc. Mode</th>
+                          <th>Earning/Deduction/Fund</th>
+                          <th>Rate</th>
+                          <th>Amount</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                    <div class="row">&nbsp;</div>
+                    <div class="row">
+                    <div class="col-md-2">
+                    <div class="form-group">
+                      <label>Discription</label>
+                      <input type="text" class="form-control" id="discription" name="discription">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Allowance Calc. Mode</label>
+                      <select name="allowance_calc_mode" id="allowance_calc_mode" class="form-control">
+                        <option value="">RUNTIME VALUE</option>
+                        <option value="">PRESENT RATE</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Earning/Deduction/Fund</label>
+                      <select name="earning_deduction_fund" id="earning_deduction_fund" class="form-control">
+                        <option value="">Earning</option>
+                        <option value="">Deduction</option>
+                        <option value="">Fund</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label>Rate</label>
+                      <input type="text" class="form-control" id="rate" name="rate">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <div class="clearfix">&nbsp;</div>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="clearfix">&nbsp;</div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
+                    <table id="employee_pay" class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>S.No</th>
+                          <th>Discription</th>
+                          <th>Allowance Calc. Mode</th>
+                          <th>Earning/Deduction/Fund</th>
+                          <th>Rate</th>
+                          <th>Amount</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                   <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                   <div class="col-md-2">
+                    <div class="form-group">
+                      <label>Discription</label>
+                      <input type="text" class="form-control" id="discription" name="discription">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Allowance Calc. Mode</label>
+                      <select name="allowance_calc_mode" id="allowance_calc_mode" class="form-control">
+                        <option value="">RUNTIME VALUE</option>
+                        <option value="">PRESENT RATE</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Earning/Deduction/Fund</label>
+                      <select name="earning_deduction_fund" id="earning_deduction_fund" class="form-control">
+                        <option value="">Earning</option>
+                        <option value="">Deduction</option>
+                        <option value="">Fund</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label>Rate</label>
+                      <input type="text" class="form-control" id="rate" name="rate">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <div class="clearfix">&nbsp;</div>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="clearfix">&nbsp;</div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
+                    <table id="employee_pay" class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>S.No</th>
+                          <th>Discription</th>
+                          <th>Allowance Calc. Mode</th>
+                          <th>Earning/Deduction/Fund</th>
+                          <th>Rate</th>
+                          <th>Amount</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                    </div>
+                    </div>
+                   </div>
+                  </div>
+
+                  <!-- end -->
+
+
                 </div>
               </form>
-              </div>
-              <div class="clearfix">&nbsp;</div>
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive">
-                <table id="employee_details" class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>S.No</th>
-                      <th>Name</th>
-                      <th>Father Name</th>
-                      <th>Cnic</th>
-                      <th>Date Of Birth</th>
-                      <th>Gender</th>
-                      <th>Marital Status</th>
-                      <th>Domecile</th>
-                      <th>Blood Group</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                   
-                  </tbody>
-                </table>
-              </div>
-
             </div>
           </div>
           <!-- /.card-body -->
@@ -173,146 +348,25 @@
     </div>
   </div>
   <div class="clearfix">&nbsp;</div>
-  <div class="container-fluid">
-    <div class="row">
-      <!-- left column -->
-      <div class="col-md-12">
-
-        <div class="card card-success">
-          <div class="card card-success border border-2 border-dark bg-light">
-            <div style="background-color: darkblue;" class="card-header  text-white fw-bold">
-              <div class="card-title">Salary Imbursement</div>
-
-            </div>
-
-
-            <!-- /.card-header -->
-            <div class="card-body bg-light">
-              <!-- form start -->
-              <form method="post" enctype="multipart/form-data">
-                <div class="row">
-                  <div class="clearfix">&nbsp;</div>
-                  <div class="col-3">
-                    <div class="form-group">
-                      <label>Payment Mode</label>
-                    </div>
-                  </div>
-                  <div class="col-3">
-                    <div class="form-check">
-                      <input type="radio" class="form-check-input" id="radio1" name="radio1" value="option1">
-                      <label class="form-check-label" for="radio1">Bank Transfer</label>
-                    </div>
-                  </div>
-                  <div class="col-3">
-                    <div class="form-check">
-                      <input type="radio" class="form-check-input" id="radio2" name="radio2" value="option2">
-                      <label class="form-check-label" for="radio1">Cross Cheque</label>
-                    </div>
-                  </div>
-                  <div class="col-3">
-                    <div class="form-check">
-                      <input type="radio" class="form-check-input" id="radio3" name="radio3" value="option3">
-                      <label class="form-check-label" for="radio1">Cash Payment</label>
-                    </div>
-                  </div>
-                  <div class="clearfix">&nbsp;</div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Employee Pay Group </label>
-                      <input type="text" name="" placeholder="Employee Pay Group" class="form-control" autocomplete="off" required="">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Employee Pay Sub Group </label>
-                      <input type="text" name="" placeholder="Employee Pay Sub Group" class="form-control" autocomplete="off" required="">
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Employee Pay Classification</label>
-                      <input type="text" name="employee_pay_classification" id="employee_pay_classification" placeholder="Employee Pay Classification" class="form-control" autocomplete="off" required="">
-                    </div>
-                  </div>
-
-
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Salary Bank</label>
-                      <select name="salary_bank" id="salary_bank" class="form-control">
-                        <option value="">Select Salary Bank</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Salary Branch</label>
-                      <input type="text" name="salary_branch" id="salary_branch" placeholder="Salary Branch" class="form-control" autocomplete="off" required="">
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Account No</label>
-                      <input type="text" name="account_no" id="account_no" placeholder="Account No" class="form-control" autocomplete="off" required="">
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Pay Type</label>
-                      <input type="text" name="pay_type" id="pay_type" placeholder="Pay Type" class="form-control" autocomplete="off" required="">
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>EOBI No</label>
-                      <input type="text" name="eobi_no" id="eobi_no" placeholder="EOBI No" class="form-control" autocomplete="off" required="">
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Bill Walved Off</label>
-                      <input type="text" name="bill_walved_off" id="bill_walved_off" placeholder="Bill Walved Off" class="form-control" autocomplete="off" required="">
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Weekly Working Days</label>
-                      <select name="salary_bank" id="salary_bank" class="form-control">
-                        <option value="">Select Working Days</option>
-                        <option value="">6-Days Week</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Bill Walved Off</label>
-                      <input type="text" name="bill_walved_off" id="bill_walved_off" placeholder="Bill Walved Off" class="form-control" autocomplete="off" required="">
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label>Remarks</label>
-                      <textarea class="form-control"></textarea>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-        </div>
-        <!-- Col-12 -->
-      </div>
-      <!-- row -->
-    </div>
-  </div>
-  <div class="clearfix">&nbsp;</div>
   <div class="clearfix">&nbsp;</div>
   <?php include('link/desigene/script.php') ?>
-  
+  <script>
+    const triggerTabList = document.querySelectorAll('#myTab button')
+    triggerTabList.forEach(triggerEl => {
+      const tabTrigger = new bootstrap.Tab(triggerEl)
+
+      triggerEl.addEventListener('click', event => {
+        event.preventDefault()
+        tabTrigger.show()
+      })
+    })
+
+    // const triggerEl = document.querySelector('#myTab button[data-bs-target="#profile"]')
+    // bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+
+    // const triggerFirstTabEl = document.querySelector('#myTab li:first-child button')
+    // bootstrap.Tab.getInstance(triggerFirstTabEl).show() // Select first tab
+  </script>
 </body>
 
 </html>

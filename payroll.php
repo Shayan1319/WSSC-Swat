@@ -61,6 +61,9 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000;
   }
+  button {
+    background-color: darkblue !important;
+  }
 </style>
 
 <body>
