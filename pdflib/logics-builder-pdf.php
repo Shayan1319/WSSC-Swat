@@ -197,13 +197,13 @@ class LB_PDF extends FPDF {
     // Page header
     public function Header() {
         if ($this->pageHeaderRepeat || (!$this->pageHeaderRepeat && !$this->pageHeaderAdded)) {
-            
-            $this->Image('image/logo.png', $this->GetX(), $this->GetY(), 32);
+            $xPos = $this->getPageWidth() - 192 - $this->getMargins()['right'];
+            $this->Image('image/logo.png', $xPos, $this->GetY(), 50);
             // Set the X position to the right margin minus the image width
             $xPos = $this->getPageWidth() - 30 - $this->getMargins()['right'];
             
             // Output the image at the calculated X position
-            $this->Image('image/logo2.png', $xPos, $this->GetY(), 22);
+            $this->Image('image/logo2.png', $xPos, $this->GetY(), 34);
 
             
             $this->SetFont('', 'B', 11);
