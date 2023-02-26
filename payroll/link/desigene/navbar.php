@@ -1,3 +1,4 @@
+
 <nav class="navbar header">
     <div class="row w-100">
         <div class="col-md-3 col-lg-2 col-sm-12 mx-auto">
@@ -18,21 +19,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active text-light" href="index.php">Profile</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link active text-light" href="Travel_Request.php">Travel Request</a>
-        </li>
-       <li class="nav-item">
-          <a class="nav-link text-light" href="Leavereq.php">Leave Request</a>
-        </li>
-         <li class="nav-item">
+      <ul class="nav navbar-nav" id="empayslip" style="margin-left: 990px;" >
+         <li class="nav-item" >
           <a class="nav-link text-light" href="EmployeePaySlip.php">Employee Pay Slip</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="Cv.php">Employee CV</a>
         </li>
       </ul>
     </div>

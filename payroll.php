@@ -61,14 +61,20 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000;
   }
-  button {
+  button, #payroll_print {
     background-color: darkblue !important;
+  }
+  .form-group, .form-check{
+    margin-top: 10px;
+  }
+  #payroll_print {
+    font-size: 24px;
   }
 </style>
 
 <body>
   <div id="main">
-    <?php include('link/desigene/navbar.php') ?>
+    <?php include('payroll/link/desigene/navbar.php') ?>
     <div class="clearfix">&nbsp;</div>
     <div class="container-fluid">
       <div class="row">
@@ -76,18 +82,23 @@
           <div class="card card-success border border-2 border-dark bg-light">
             <div style="background-color: darkblue;" class="card-header text-white fw-bold">
               <div class="card-title text-white">Employee Details</div>
-
             </div>
             <br>
             <!-- /.card-header -->
             <div class="card-body ">
               <!-- form start -->
               <form method="post" enctype="multipart/form-data">
-                <div class="row mt-2">
+                <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
                       <label>Employee No</label>
                       <input type="text" class="form-control" id="employee_no" name="employee_no">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <div class="clearfix">&nbsp;</div>
+                      <button type="button" class="btn btn-primary">search</button>
                     </div>
                   </div>
                   <div class="col-4">
@@ -159,12 +170,7 @@
                       <input type="text" name="status" id="status" placeholder="Status" class="form-control" autocomplete="off" required="">
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <div class="clearfix">&nbsp;</div>
-                      <button type="button" class="btn btn-primary">search</button>
-                    </div>
-                  </div>
+                  
                 </div>
               </form>
               <div class="clearfix">&nbsp;</div>
@@ -193,7 +199,6 @@
               <!-- form start -->
               <form method="post" enctype="multipart/form-data">
                 <div class="row">
-                  <div class="clearfix">&nbsp;</div>
                   <div class="col-4">
                     <div class="form-group">
                       <label>Address Line</label>
@@ -260,7 +265,6 @@
               <!-- form start -->
               <form method="post" enctype="multipart/form-data">
                 <div class="row">
-                  <div class="clearfix">&nbsp;</div>
                   <div class="col-4">
                     <div class="form-group">
                       <label>Joining Date</label>
@@ -351,7 +355,6 @@
               <!-- form start -->
               <form method="post" enctype="multipart/form-data">
                 <div class="row">
-                  <div class="clearfix">&nbsp;</div>
                   <div class="col-3">
                     <div class="form-group">
                       <label>Payment Mode</label>
@@ -375,7 +378,6 @@
                       <label class="form-check-label" for="radio1">Cash Payment</label>
                     </div>
                   </div>
-                  <div class="clearfix">&nbsp;</div>
                   <div class="col-4">
                     <div class="form-group">
                       <label>Employee Pay Group </label>
@@ -567,6 +569,14 @@
                       <tbody>
                       </tbody>
                     </table>
+                  </div>
+                  <div class="col-md-1">
+                    <div class="form-group">
+                      <div class="clearfix">&nbsp;</div>
+                      <a href="print_payroll.php">
+                        <i class="btn btn-primary fa fa-print" id="payroll_print"></i>
+                      </a>
+                    </div>
                   </div>
                   <div class="col-md-1">
                     <div class="form-group">
